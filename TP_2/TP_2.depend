@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1733913713 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\main.cpp
+	"sin.h"
+	"stp.h"
+	"gau.h"
+	"tsdata.h"
+	"knn.h"
+	<iostream>
+	<vector>
+
+1733914486 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\sin.h
+	"timeseriesgenerator.h"
+
+1733913407 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\timeseriesgenerator.h
+	<vector>
+	<iostream>
+	<random>
+
+1733914376 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\stp.h
+	"timeseriesgenerator.h"
+
+1733914327 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\gau.h
+	"timeseriesgenerator.h"
+
+1733914620 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\tsdata.h
+	<vector>
+	<cmath>
+	<stdexcept>
+
+1733922017 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\knn.h
+	<string>
+	<vector>
+	"tsdata.h"
+
+1733913728 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\gau.cpp
+	"gau.h"
+	<cmath>
+	<random>
+
+1733914884 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\knn.cpp
+	"knn.h"
+	"distance.h"
+	<algorithm>
+	<cctype>
+	<locale>
+
+1733914074 c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\include\distance.h
+	<vector>
+	<cmath>
+	<limits>
+
+1733914580 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\sin.cpp
+	"sin.h"
+	<cmath>
+
+1733914411 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\stp.cpp
+	"stp.h"
+	<random>
+
+1733914301 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\timeseriesgenerator.cpp
+	"timeseriesgenerator.h"
+
+1733914690 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\tsdata.cpp
+	"tsdata.h"
+	<algorithm>
+	<limits>
+
+1733913854 source:c:\users\hp\documents\ensisa\informatique\c++\tp\tp_2\src\distance.cpp
+	<stdexcept>
+	"distance.h"
+	<algorithm>
+
