@@ -59,14 +59,14 @@ Handles training and test data storage. It supports **Z-normalization**, ensurin
   x' = \frac{x - \mu_x}{\sigma_x}
   $$  
 
-  where \( \mu_x \) is the mean and \( \sigma_x \) is the standard deviation.  
+  where $$\ \mu_x \$$ is the mean and $$\ \sigma_x \$$ is the standard deviation.  
 
 ---
 
 ## 📏 Similarity Measures  
 
 ### **Euclidean Distance**  
-The Euclidean distance between two time series \( x \) and \( y \) is computed as:  
+The Euclidean distance between two time series $$\ x \$$ and $$\ y \$$ is computed as:  
 
   $$
   ED(x, y) = \sqrt{\sum_{i=0}^{N-1} (x[i] - y[i])^2}
@@ -75,7 +75,7 @@ The Euclidean distance between two time series \( x \) and \( y \) is computed a
 This assumes the time series are perfectly aligned.  
 
 ### ⏳ **Dynamic Time Warping (DTW)**  
-DTW allows measuring the similarity between time series that may be **temporally misaligned**. It finds an optimal warping path \( \pi \):  
+DTW allows measuring the similarity between time series that may be **temporally misaligned**. It finds an optimal warping path $$\ \pi \$$:  
 
   $$
   DTW(x, y) = \min_{\pi} \sqrt{\sum_{(i,j) \in \pi} (x[i] - y[j])^2}
