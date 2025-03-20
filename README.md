@@ -90,7 +90,7 @@ DTW is useful for applications where time series have **different speeds or shif
 The **KNN classifier** assigns a label to an unknown time series based on its similarity to known samples.  
 
 - If \( k = 1 \), the label of the closest neighbor is assigned.  
-- If \( k > 1 \), the **majority vote** among the \( k \) nearest neighbors determines the classification.  
+- If \( k > 1 \), the **majority vote** among the \ k \ nearest neighbors determines the classification.  
 
 The **classification accuracy** is calculated as:  
 
@@ -98,7 +98,7 @@ The **classification accuracy** is calculated as:
   \text{accuracy} = \frac{1}{N} \sum_{i=0}^{N-1} (y_{\text{pred}}[i] == y_{\text{true}}[i])
   $$  
 
-where \( y_{\text{pred}} \) is the predicted class and \( y_{\text{true}} \) is the ground truth label.  
+where $$\ y_{\text{pred}} \$$ is the predicted class and $$\ y_{\text{true}} \$$ is the ground truth label.  
 
 ---
 
