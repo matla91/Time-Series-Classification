@@ -43,14 +43,14 @@ Defines a base class for generating synthetic time series data. Three types of g
 - **Step Function Generator**: Generates a time series where values randomly change or remain constant.  
 - **Sinusoidal Generator**: Generates time series following a sine wave equation:  
 
-  $$
-  f(x) = A \cdot \sin(\omega \cdot x + \phi)
-  $$  
+  
+  $$f(x) = A \cdot \sin(\omega \cdot x + \phi)$$
+  
 
   where:
-  - $$\( A \)$$ is the amplitude  
-  - $$\( \omega \)$$ is the frequency  
-  - $$\( \phi \)$$ is the phase shift  
+  - $$\ A \$$ is the amplitude  
+  - $$\ \omega \$$ is the frequency  
+  - $$\ \phi \$$ is the phase shift  
 
 ### 2️⃣ Time Series Dataset  
 Handles training and test data storage. It supports **Z-normalization**, ensuring all time series have comparable scales:  
