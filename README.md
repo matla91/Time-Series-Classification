@@ -48,9 +48,9 @@ Defines a base class for generating synthetic time series data. Three types of g
   $$  
 
   where:
-  - \( A \) is the amplitude  
-  - \( \omega \) is the frequency  
-  - \( \phi \) is the phase shift  
+  - $$\( A \)$$ is the amplitude  
+  - $$\( \omega \)$$ is the frequency  
+  - $$\( \phi \)$$ is the phase shift  
 
 ### 2️⃣ Time Series Dataset  
 Handles training and test data storage. It supports **Z-normalization**, ensuring all time series have comparable scales:  
@@ -102,27 +102,10 @@ where \( y_{\text{pred}} \) is the predicted class and \( y_{\text{true}} \) is 
 
 ---
 
-## 📌 Future Enhancements  
-
-- 🚀 **Implement additional similarity measures**, such as **Edit Distance for Real Sequences (EDR)**.  
-- 🔄 **Optimize DTW computations** to handle larger datasets efficiently.  
-- 📊 **Expand datasets** to include real-world time series from finance, healthcare, and IoT.  
-- 🤖 **Incorporate deep learning models**, such as **LSTMs** for more complex pattern recognition.  
-
----
-
 ## 📜 References  
 
 - 🔗 **UCR Time Series Archive**: [UCR Archive](https://www.cs.ucr.edu/~eamonn/time_series_data_2018/)  
 - 🔗 **Dynamic Time Warping (DTW)**: [DTW Explanation](https://en.wikipedia.org/wiki/Dynamic_time_warping)  
-
----
-
-## 🎯 Conclusion  
-
-This project **demonstrates the power of KNN for time series classification**, applying different similarity measures like **Euclidean Distance and DTW**. The **modular design** allows for easy expansion, and its **real-world applications** range from healthcare to finance and beyond.  
-
-🚀 **Ready to classify your own time series? Get started now!** 🚀  
 
 ---
 
