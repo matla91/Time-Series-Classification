@@ -106,12 +106,3 @@ where $$\ y_{\text{pred}} \$$ is the predicted class and $$\ y_{\text{true}} \$$
 
 - 🔗 **UCR Time Series Archive**: [UCR Archive](https://www.cs.ucr.edu/~eamonn/time_series_data_2018/)  
 - 🔗 **Dynamic Time Warping (DTW)**: [DTW Explanation](https://en.wikipedia.org/wiki/Dynamic_time_warping)  
-
----
-
-## 🔗 How to Use This Repo?  
-
-1️⃣ Clone this repository:  
-```sh
-git clone https://github.com/your-username/time-series-classification.git
-cd time-series-classification
