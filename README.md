@@ -36,64 +36,99 @@ We classify heart activity based on **ECG200 Dataset** (from the [UCR Archive](h
 
 ## 🛠 Implementation Details  
 
-### 1️⃣ Time Series Generator (`TimeSeriesGenerator`)  
-A base class that defines:  
-- `seed (int)`: Controls random number generation.  
-- `generateTimeSeries(int)`: A pure virtual function for generating time series.  
-- `printTimeSeries(vector<double>)`: A static function to display a time series.  
+### 1️⃣ Time Series Generator  
+Defines a base class for generating synthetic time series data. Three types of generators are implemented:  
 
-### 2️⃣ Gaussian Generator (`GaussianGenerator`)  
-Generates time series following a **Gaussian distribution**, using the **Box-Muller transform**.  
-- Attributes:  
-  - `mean (double)`  
-  - `standard deviation (double)`  
+- **Gaussian Generator**: Generates time series from a normal distribution.  
+- **Step Function Generator**: Generates a time series where values randomly change or remain constant.  
+- **Sinusoidal Generator**: Generates time series following a sine wave equation:  
 
-### 3️⃣ Step Function Generator (`StepGenerator`)  
-Generates a **step function time series** where values randomly change or stay constant.  
+  $$
+  f(x) = A \cdot \sin(\omega \cdot x + \phi)
+  $$  
 
-- 50% probability of changing to a **random value (0-100)**.  
-- 50% probability of keeping the previous value.  
+  where:
+  - \( A \) is the amplitude  
+  - \( \omega \) is the frequency  
+  - \( \phi \) is the phase shift  
 
-### 4️⃣ Sinusoidal Generator (`SinWaveGenerator`)  
-Generates **sinusoidal time series** based on the equation:  
-\[
-f(x) = A \cdot \sin(\omega \cdot x + \phi)
-\]
-- `A (Amplitude)`  
-- `ω (Frequency)`  
-- `ϕ (Phase Shift)`  
+### 2️⃣ Time Series Dataset  
+Handles training and test data storage. It supports **Z-normalization**, ensuring all time series have comparable scales:  
 
-### 5️⃣ Time Series Dataset (`TimeSeriesDataset`)  
-Manages time series data for training and testing.  
-- **Normalization (`Z-Normalization`)** ensures all series have the same scale.  
-- Stores **samples** and **labels** for classification.  
+  $$
+  x' = \frac{x - \mu_x}{\sigma_x}
+  $$  
 
-### 6️⃣ Similarity Measures  
-
-#### 📏 Euclidean Distance  
-Measures the straight-line distance between two time series:  
-\[
-ED(x, y) = \sqrt{\sum_{i=0}^{N-1} (x[i] - y[i])^2}
-\]  
-
-#### ⏳ Dynamic Time Warping (DTW)  
-Handles **time misalignment** by finding the best matching path between sequences:  
-\[
-DTW(x, y) = \min_{\pi} \sqrt{\sum_{(i,j) \in \pi} (x[i] - y[j])^2}
-\]  
-
-DTW allows sequences to be **stretched or compressed** to match similar patterns.
+  where \( \mu_x \) is the mean and \( \sigma_x \) is the standard deviation.  
 
 ---
 
-## 🤖 Implementing K-Nearest Neighbors (KNN)  
+## 📏 Similarity Measures  
 
-A **KNN classifier** is used for time series classification.  
-- `K (int)`: Number of neighbors to consider.  
-- `similarityMeasure (string)`: Chooses **DTW or Euclidean Distance**.  
-- **Classification Strategy**:  
-  - If **k = 1**, assign the label of the closest time series.  
-  - If **k > 1**, assign the most frequent label among the `k` nearest neighbors.  
+### **Euclidean Distance**  
+The Euclidean distance between two time series \( x \) and \( y \) is computed as:  
 
+  $$
+  ED(x, y) = \sqrt{\sum_{i=0}^{N-1} (x[i] - y[i])^2}
+  $$  
 
+This assumes the time series are perfectly aligned.  
 
+### ⏳ **Dynamic Time Warping (DTW)**  
+DTW allows measuring the similarity between time series that may be **temporally misaligned**. It finds an optimal warping path \( \pi \):  
+
+  $$
+  DTW(x, y) = \min_{\pi} \sqrt{\sum_{(i,j) \in \pi} (x[i] - y[j])^2}
+  $$  
+
+DTW is useful for applications where time series have **different speeds or shifts**.  
+
+---
+
+## 🤖 K-Nearest Neighbors (KNN) for Classification  
+
+The **KNN classifier** assigns a label to an unknown time series based on its similarity to known samples.  
+
+- If \( k = 1 \), the label of the closest neighbor is assigned.  
+- If \( k > 1 \), the **majority vote** among the \( k \) nearest neighbors determines the classification.  
+
+The **classification accuracy** is calculated as:  
+
+  $$
+  \text{accuracy} = \frac{1}{N} \sum_{i=0}^{N-1} (y_{\text{pred}}[i] == y_{\text{true}}[i])
+  $$  
+
+where \( y_{\text{pred}} \) is the predicted class and \( y_{\text{true}} \) is the ground truth label.  
+
+---
+
+## 📌 Future Enhancements  
+
+- 🚀 **Implement additional similarity measures**, such as **Edit Distance for Real Sequences (EDR)**.  
+- 🔄 **Optimize DTW computations** to handle larger datasets efficiently.  
+- 📊 **Expand datasets** to include real-world time series from finance, healthcare, and IoT.  
+- 🤖 **Incorporate deep learning models**, such as **LSTMs** for more complex pattern recognition.  
+
+---
+
+## 📜 References  
+
+- 🔗 **UCR Time Series Archive**: [UCR Archive](https://www.cs.ucr.edu/~eamonn/time_series_data_2018/)  
+- 🔗 **Dynamic Time Warping (DTW)**: [DTW Explanation](https://en.wikipedia.org/wiki/Dynamic_time_warping)  
+
+---
+
+## 🎯 Conclusion  
+
+This project **demonstrates the power of KNN for time series classification**, applying different similarity measures like **Euclidean Distance and DTW**. The **modular design** allows for easy expansion, and its **real-world applications** range from healthcare to finance and beyond.  
+
+🚀 **Ready to classify your own time series? Get started now!** 🚀  
+
+---
+
+## 🔗 How to Use This Repo?  
+
+1️⃣ Clone this repository:  
+```sh
+git clone https://github.com/your-username/time-series-classification.git
+cd time-series-classification
