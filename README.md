@@ -95,8 +95,5 @@ A **KNN classifier** is used for time series classification.
   - If **k = 1**, assign the label of the closest time series.  
   - If **k > 1**, assign the most frequent label among the `k` nearest neighbors.  
 
-Computes **accuracy** using:  
-\[
-accuracy = \frac{1}{N} \sum_{i=0}^{N-1} (y_{pred}[i] == y_{true}[i])
-\]  
+
 
